@@ -6,12 +6,15 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        String st="we found a treasure!";
+        Scanner scanner=new Scanner(System.in);
+        String st=scanner.nextLine();
+        String aa="abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
+        int ck=scanner.nextInt();
         for(int i=0;i<st.length();i++){
-            int x=st.charAt(i);
-            x=97+25-x+97;
-            char ch=(char)x;
             if(st.charAt(i)>='a'&&st.charAt(i)<='z') {
+                int x=st.charAt(i)-97;
+                x+=ck;
+                char ch=aa.charAt(x);
                 st = st.substring(0, i) + ch + st.substring(i + 1);
             }
         }
